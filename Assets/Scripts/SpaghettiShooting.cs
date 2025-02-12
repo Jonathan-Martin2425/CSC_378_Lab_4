@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaghettiShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform bulletPos;
+    public List<Transform> shootPoints;
 
     private float bulletDelay;
     public float bulletDelayThreshold;
@@ -28,6 +29,8 @@ public class SpaghettiShooting : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, bulletPos.position, Quaternion.identity);
+        foreach(Transform bulletPos in shootPoints){
+            Instantiate(bulletPrefab, bulletPos.position, Quaternion.identity);
+        }
     }
 }

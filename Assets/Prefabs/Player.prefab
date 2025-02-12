@@ -244,7 +244,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6359745874052711714, guid: e7145a90aa33a403b9b4efc04be6631f, type: 3}
   rightShootingPos: {fileID: 566006037580360440}
   leftShootingPos: {fileID: 951232463109848150}
-  fireRate: 1
+  fireRate: 0.4
 --- !u!114 &5002631219489706711
 MonoBehaviour:
   m_ObjectHideFlags: 0
