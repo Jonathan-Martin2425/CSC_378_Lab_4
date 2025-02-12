@@ -24,4 +24,14 @@ public class SpaghettiBullet : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D obj){
+        if(obj.tag == "Player"){
+            obj.GetComponent<PlayerHealth>().takeDamage();
+            Destroy(gameObject);
+        }
+        if(obj.tag == "Offscreen"){
+            Destroy(gameObject);
+        }
+    }
 }
