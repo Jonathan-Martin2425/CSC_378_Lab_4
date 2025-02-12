@@ -5,7 +5,9 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private bool isShooting = false;
-    public Transform shootingPos;
+    private bool isShootingRight = false;
+    public Transform rightShootingPos;
+    public Transform leftShootingPos;
     public float fireRate = 1f;
     private float nextFireTime = 0f;
 
@@ -27,7 +29,16 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(bulletPrefab, shootingPos.position, Quaternion.identity);
+        if (isShootingRight)
+        {
+            Instantiate(bulletPrefab, rightShootingPos.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(bulletPrefab, leftShootingPos.position, Quaternion.identity);
+        }
+
+        isShootingRight = !isShootingRight;
     }
 
     private void OnAttack(InputValue inputValue)
