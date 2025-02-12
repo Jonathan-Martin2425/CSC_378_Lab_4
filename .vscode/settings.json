@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Lab 4.sln"
+    "dotnet.defaultSolution": "CSC_378_Lab_4.sln"
 }
