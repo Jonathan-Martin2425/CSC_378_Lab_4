@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 3016931645094314183}
   - component: {fileID: 4789797309320812647}
   - component: {fileID: 3751246516468698013}
+  - component: {fileID: 5303213908904803931}
   m_Layer: 0
   m_Name: Spaghetti Monster
   m_TagString: Untagged
@@ -366,3 +367,16 @@ MonoBehaviour:
   - {fileID: 3500584446124196840}
   - {fileID: 844263671003046332}
   bulletDelayThreshold: 2
+--- !u!114 &5303213908904803931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7499355517315664004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648b1b9716b24c74e9bba6d4e909632f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSpeed: 5
