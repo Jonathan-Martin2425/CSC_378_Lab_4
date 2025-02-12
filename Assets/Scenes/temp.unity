@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 681748372}
   - component: {fileID: 681748376}
   - component: {fileID: 681748375}
+  - component: {fileID: 681748377}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -390,7 +391,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6359745874052711714, guid: e7145a90aa33a403b9b4efc04be6631f, type: 3}
   rightShootingPos: {fileID: 1662027690}
   leftShootingPos: {fileID: 1893661152}
-  fireRate: 1
+  fireRate: 0.2
 --- !u!114 &681748376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +422,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &681748377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681748370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b741365e12a4a48b383255be1ca4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &1662027689
 GameObject:
   m_ObjectHideFlags: 0
