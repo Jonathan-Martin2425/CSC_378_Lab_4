@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
             lives -= 1;
             if(lives <= 0){
                 Destroy(gameObject);
+                SceneManager.LoadScene("LoseScreen");
             }
         }
     }
