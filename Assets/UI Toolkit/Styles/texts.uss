@@ -1,0 +1,5 @@
+.menu-title {
+    color: rgb(248, 48, 48);
+    -unity-font-style: bold;
+    font-size: 60px;
+}
