@@ -6,26 +6,24 @@ using UnityEngine;
 public class BossHitbox : MonoBehaviour
 {
     public float health = 100f;
-    public GameObject parent;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.1f;
     private bool isFlashing;
 
     void Start()
     {
-        spriteRenderer = parent.GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void takeDamage(float damage)
     {
         health -= damage;
-        //change color
-        if (health <= 0){
-            Destroy(gameObject);
         if (!isFlashing)
         {
             StartCoroutine(onDamage());
         }
+        if (health <= 0){
+            Destroy(gameObject);
         }
     }
 
