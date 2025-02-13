@@ -17,11 +17,10 @@ public class BossMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tr.position.x >= 4.6){
+        /*if(tr.position.x >= 4.6){
             rb.linearVelocityX = -bossSpeed;
         }else if(tr.position.x <= -4.6){
             rb.linearVelocityX = bossSpeed;
-        }
-        tr.Rotate(new Vector3(0, 0, 45 * Time.deltaTime));
+        }*/
     }
 }
