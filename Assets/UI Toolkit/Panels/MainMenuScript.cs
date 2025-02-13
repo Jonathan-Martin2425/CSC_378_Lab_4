@@ -29,6 +29,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void QuitClicked(ClickEvent evt)
     {
-        Debug.Log("Quit Game");
+        Application.Quit();
     }
 }
