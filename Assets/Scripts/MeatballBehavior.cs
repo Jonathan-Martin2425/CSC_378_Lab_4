@@ -22,6 +22,8 @@ public class MeatballBehavior : MonoBehaviour
 
         float bulletRotation = Mathf.Atan2(-bulletDir.y, -bulletDir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, bulletRotation + 90);
+        System.Random rng = new System.Random();
+        fuseTime -= (float)rng.NextDouble();
     }
 
     // Update is called once per frame
