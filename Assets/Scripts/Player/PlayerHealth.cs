@@ -38,14 +38,14 @@ public class PlayerHealth : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D obj){
-        if(obj.tag == "Boss"){
+        if(obj.tag == "Boss" || obj.tag == "BossPart"){
             takeDamage();
         }
     }
 
     void OnCollisionEnter2D(Collision2D obj)
     {
-        if(obj.gameObject.tag == "Boss"){
+        if(obj.gameObject.tag == "Boss" || obj.gameObject.tag == "BossPart"){
             takeDamage();
         }
     }
