@@ -1,0 +1,11 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/menu-buttons.uss?fileID=7433441132597879392&amp;guid=3acdb713290084f5ca08c10c35843a94&amp;type=3#menu-buttons" />
+    <engine:VisualElement name="MenuBackground" style="flex-grow: 1; flex-direction: row; width: auto; background-image: url(&quot;project://database/Assets/UI%20Toolkit/Images/StartBackground.png?fileID=2800000&amp;guid=762be5c43d6484a29b09adea49e2d0de&amp;type=3#StartBackground&quot;);">
+        <engine:VisualElement name="Container" style="flex-grow: 0; width: 30%; justify-content: center; margin-top: 139px; margin-right: 139px; margin-bottom: 139px; margin-left: 139px; background-size: 50% 100%;">
+            <engine:Label text="Pasta Peril" name="Title" class="menu-title" style="-unity-text-align: upper-center; font-size: 92px; -unity-font-style: bold; color: rgb(255, 42, 42); margin-top: -9px; margin-right: -9px; margin-bottom: -9px; margin-left: -9px;" />
+            <engine:Button text="Start&#10;" name="Start" class="menu-button" style="padding-right: 0; padding-left: 0; margin-right: 120px; margin-left: 120px;" />
+            <engine:Button text="Credits" name="Credits" class="menu-button" style="padding-right: 0; padding-left: 0;" />
+            <engine:Button text="Quit" name="Quit" class="menu-button" style="padding-right: 0; padding-left: 0; margin-right: 135px; margin-left: 135px;" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
