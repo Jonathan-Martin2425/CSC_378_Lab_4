@@ -1,0 +1,32 @@
+.menu-button {
+    -unity-font-style: bold;
+    font-size: 72px;
+    background-size: 100% 100%;
+    margin-top: -6px;
+    margin-right: 80px;
+    margin-bottom: -6px;
+    margin-left: 80px;
+    background-color: rgba(31, 121, 202, 0);
+    color: rgba(255, 255, 255, 0.75);
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    text-shadow: 3.6px 0.4px 300px rgba(0, 0, 0, 0.63);
+    -unity-text-outline-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.menu-button:hover {
+    -unity-font-style: bold;
+    font-size: 80px;
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    text-shadow: 3.6px 0.4px 84px rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+    letter-spacing: 0;
+    margin-right: 0;
+    margin-left: 0;
+}

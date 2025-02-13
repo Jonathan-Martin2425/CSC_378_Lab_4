@@ -12,11 +12,14 @@ public class SpaghettiBullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        Vector3 bulletDir = player.transform.position - transform.position;
-        rb.linearVelocity = new Vector2(bulletDir.x, bulletDir.y).normalized * bulletSpeed;
+        if (player)
+        {
+            Vector3 bulletDir = player.transform.position - transform.position;
+            rb.linearVelocity = new Vector2(bulletDir.x, bulletDir.y).normalized * bulletSpeed;
 
-        float bulletRotation = Mathf.Atan2(-bulletDir.y, -bulletDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, bulletRotation + 90);
+            float bulletRotation = Mathf.Atan2(-bulletDir.y, -bulletDir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, bulletRotation + 90);
+        }
     }
 
     // Update is called once per frame
