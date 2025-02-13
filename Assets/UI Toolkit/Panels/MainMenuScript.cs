@@ -24,8 +24,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void CreditsClicked(ClickEvent evt)
     {
-        Debug.Log("Credits Screen");
-        //SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitClicked(ClickEvent evt)

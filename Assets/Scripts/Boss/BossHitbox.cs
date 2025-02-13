@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossHitbox : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class BossHitbox : MonoBehaviour
         }
         if (health <= 0){
             Destroy(gameObject);
+            SceneManager.LoadScene("WinScreen");
         }
     }
 
