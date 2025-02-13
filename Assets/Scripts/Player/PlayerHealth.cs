@@ -34,4 +34,24 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D obj){
+        if(obj.tag == "Boss"){
+            takeDamage();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D obj)
+    {
+        if(obj.gameObject.tag == "Boss"){
+            takeDamage();
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D obj)
+    {
+        if(obj.gameObject.tag == "Boss" || obj.gameObject.tag == "BossPart"){
+            takeDamage();
+        }
+    }
 }

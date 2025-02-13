@@ -14,13 +14,21 @@ public class BossMovement : MonoBehaviour
         tr = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D obj)
     {
-        /*if(tr.position.x >= 4.6){
+        if(rb.linearVelocityX < 0){
             rb.linearVelocityX = -bossSpeed;
-        }else if(tr.position.x <= -4.6){
+        }else{
             rb.linearVelocityX = bossSpeed;
-        }*/
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D obj)
+    {
+        if(rb.linearVelocityX < 0){
+            rb.linearVelocityX = -bossSpeed;
+        }else{
+            rb.linearVelocityX = bossSpeed;
+        }
     }
 }

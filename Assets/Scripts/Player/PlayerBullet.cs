@@ -16,9 +16,6 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
-
-        
-        
     }
 
     void OnTriggerEnter2D(Collider2D obj){
