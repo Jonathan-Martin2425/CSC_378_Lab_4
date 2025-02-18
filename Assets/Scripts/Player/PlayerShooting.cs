@@ -3,18 +3,21 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject leftBulletPrefab;
+    public GameObject rightBulletPrefab;
     private bool isShooting = false;
-    private bool isShootingRight = false;
+    private bool isShootingRight = true;
     public Transform rightShootingPos;
     public Transform leftShootingPos;
     public float fireRate = 1f;
-    private float nextFireTime = 0f;
+    private Animator playerAnimator;
+    private float nextFireTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerAnimator = GetComponent<Animator>();
+        //nextFireTime = fireRate;
     }
 
     // Update is called once per frame
@@ -31,11 +34,11 @@ public class PlayerShooting : MonoBehaviour
     {
         if (isShootingRight)
         {
-            Instantiate(bulletPrefab, rightShootingPos.position, Quaternion.identity);
+            Instantiate(rightBulletPrefab, rightShootingPos.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(bulletPrefab, leftShootingPos.position, Quaternion.identity);
+            Instantiate(leftBulletPrefab, leftShootingPos.position, Quaternion.identity);
         }
 
         isShootingRight = !isShootingRight;
@@ -45,5 +48,7 @@ public class PlayerShooting : MonoBehaviour
     {
         // When space bar is pressed, isShooting will be set to the opposite of its current value
         isShooting = !isShooting;
+        playerAnimator.SetBool("isShooting", isShooting);
+        Debug.Log(playerAnimator.GetBool("isShooting"));
     }
 }

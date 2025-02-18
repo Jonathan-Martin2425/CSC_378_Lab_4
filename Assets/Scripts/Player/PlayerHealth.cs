@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +8,12 @@ public class PlayerHealth : MonoBehaviour
     public float lives = 3;
     public float iFrames = 3;
     private float curIframes = 0;
-    private SpriteRenderer spr;
+    public List<SpriteRenderer> sprs;
     public float blinkingSpeed = 0.25f;
 
     void Start()
     {
-        spr = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -20,9 +21,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if(curIframes > 0){
             curIframes -= Time.deltaTime;
-            spr.forceRenderingOff = (curIframes / blinkingSpeed % 2) >= 1;
+            foreach(SpriteRenderer spr in sprs){
+                spr.forceRenderingOff = (curIframes / blinkingSpeed % 2) >= 1;
+            }
         }else{
-            spr.forceRenderingOff = false;
+            foreach(SpriteRenderer spr in sprs){
+                spr.forceRenderingOff = false;
+            }
         }
     }
 
