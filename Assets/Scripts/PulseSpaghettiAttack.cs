@@ -2,11 +2,9 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class RotateFiring : MonoBehaviour
+public class PulseFiring : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public float SauceBulletDelay = 0.4f;
-    public float rotationSpeed = 0f;
     private float bulletsOffset = 0.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
