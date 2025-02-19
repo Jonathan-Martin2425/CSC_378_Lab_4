@@ -306,7 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 1643286571}
     - target: {fileID: 6324345233592479916, guid: e7ddd691379a89e4bae2385a7646e9c1, type: 3}
       propertyPath: lives
-      value: 99
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6324345233592479916, guid: e7ddd691379a89e4bae2385a7646e9c1, type: 3}
       propertyPath: sprs.Array.size
