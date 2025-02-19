@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MeatP2TriggerHandler : MonoBehaviour
 {
-    public Vector2 checkCenter;
-    public float checkRadius = 0.5f;
+    public int maxBounces = 3;
+    private int numBounces = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,17 +14,38 @@ public class MeatP2TriggerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Collider2D[] overlaps = Physics2D.OverlapCircleAll(transform.position, checkRadius);
 
-        if (overlaps.Length > 0)
-        {
-            foreach (var overlap in overlaps)
-            {
-                if (overlap.CompareTag("Player")) 
-                {
-                    overlap.GetComponent<PlayerHealth>().takeDamage();
-                    Debug.Log("Player hit");
-                }
+    }
+
+    void OnTriggerEnter2D(Collider2D obj){
+        if(obj.tag == "Player"){
+            obj.GetComponent<PlayerHealth>().takeDamage();
+            Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D obj)
+    {
+        if(obj.gameObject.tag == "Player"){
+            obj.gameObject.GetComponent<PlayerHealth>().takeDamage();
+            Destroy(gameObject);
+        }else{
+            numBounces += 1;
+            if(numBounces >= maxBounces){
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D obj)
+    {
+        if(obj.gameObject.tag == "Player"){
+            obj.gameObject.GetComponent<PlayerHealth>().takeDamage();
+            Destroy(gameObject);
+        }else{
+            numBounces += 1;
+            if(numBounces >= maxBounces){
+                Destroy(gameObject);
             }
         }
     }

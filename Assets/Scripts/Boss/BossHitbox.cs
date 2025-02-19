@@ -16,31 +16,25 @@ public class BossHitbox : MonoBehaviour
     private Animator bossAnimator;
     public float maxHealth = 2000f;
     public float curHealth;
-    [SerializeField] HealthBar healthBar;
+    public HealthBar healthBar;
 
     void Start()
     {
         curHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         bossAnimator = GetComponent<Animator>();
-        healthBar = GetComponentInChildren<HealthBar>();
         healthBar.UpdateHealthBar(maxHealth, curHealth);
     }
 
-    public void takeDamage(float damage)
+    void Update()
     {
-        curHealth -= damage;
-        healthBar.UpdateHealthBar(maxHealth, curHealth);
-        if (!isFlashing)
-        {
-            StartCoroutine(onDamage());
-        }
         if (curHealth <= 0){
             Destroy(gameObject);
             SceneManager.LoadScene("WinScreen");
         }else if (curHealth <= phase2Threshhold && 
         -phase2PositionOffset < gameObject.transform.position.x
-         && gameObject.transform.position.x < phase2PositionOffset){
+         && gameObject.transform.position.x < phase2PositionOffset
+         && bossAnimator.GetInteger("phase") == 1){
             bossAnimator.SetInteger("phase", 2);
             GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
             GetComponent<SpriteRenderer>().enabled = false;
@@ -49,6 +43,19 @@ public class BossHitbox : MonoBehaviour
             foreach(GameObject obj in nonPhase2Objs){
                 obj.SetActive(false);
             }
+            GetComponent<BossAttackPattern>().bulletsShot = 0;
+        }
+    }
+
+
+
+    public void takeDamage(float damage)
+    {
+        curHealth -= damage;
+        healthBar.UpdateHealthBar(maxHealth, curHealth);
+        if (!isFlashing)
+        {
+            StartCoroutine(onDamage());
         }
     }
 

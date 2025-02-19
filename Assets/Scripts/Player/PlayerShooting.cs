@@ -49,6 +49,5 @@ public class PlayerShooting : MonoBehaviour
         // When space bar is pressed, isShooting will be set to the opposite of its current value
         isShooting = !isShooting;
         playerAnimator.SetBool("isShooting", isShooting);
-        Debug.Log(playerAnimator.GetBool("isShooting"));
     }
 }
