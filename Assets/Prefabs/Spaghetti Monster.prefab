@@ -769,6 +769,7 @@ GameObject:
   - component: {fileID: 5303213908904803931}
   - component: {fileID: 810149597044237370}
   - component: {fileID: 33995359196348898}
+  - component: {fileID: 3792000820025645264}
   m_Layer: 5
   m_Name: Spaghetti Monster
   m_TagString: Boss
@@ -845,7 +846,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3896541053104886587, guid: 60c8d34588f7038489fd08471764f63a, type: 3}
-  m_Color: {r: 0.9924528, g: 0.90638644, b: 0.088009916, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -948,6 +949,9 @@ MonoBehaviour:
   tentacleShootPoints:
   - {fileID: 270332415965466533}
   - {fileID: 3815462114490554255}
+  tentaclesArms:
+  - {fileID: 5534092236188891305}
+  - {fileID: 8352548675098883940}
   indicator: {fileID: 125379400558316627, guid: 135c3d265b57bfa488a64cd6ba9c719c, type: 3}
   lazer: {fileID: 7486171546497656628, guid: 842514fea372f9a4dbb76905128908a9, type: 3}
   indicatorTime: 1
@@ -980,7 +984,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85ba8527e6b69948b480d583c8f19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2000
+  health: 3000
+  phase2Threshhold: 1500
+  phase2PositionOffset: 0.5
+  nonPhase2Objs:
+  - {fileID: 793348263680939802}
+  - {fileID: 3757611085306566871}
+  - {fileID: 1034113866297599673}
   flashDuration: 0.1
 --- !u!95 &33995359196348898
 Animator:
@@ -1004,6 +1014,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &3792000820025645264
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7499355517315664004}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.26924667, y: -0.57837963}
+  m_Radius: 1.278883
 --- !u!1 &8652622853613955283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,9 +1194,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
+--- !u!1 &3757611085306566871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3717878682135160054, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
+  m_PrefabInstance: {fileID: 557665326900018209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6368688250137260797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6908268466182016732, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
+  m_PrefabInstance: {fileID: 557665326900018209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8352548675098883940 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8383186192954346309, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
   m_PrefabInstance: {fileID: 557665326900018209}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &735297189750823505
@@ -1346,6 +1402,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
+--- !u!1 &793348263680939802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3717878682135160054, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
+  m_PrefabInstance: {fileID: 4078577894145258476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5534092236188891305 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8383186192954346309, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}
+  m_PrefabInstance: {fileID: 4078577894145258476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7441386316686048560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6908268466182016732, guid: 0eb1ee984c4560748b0ab207b8dff581, type: 3}

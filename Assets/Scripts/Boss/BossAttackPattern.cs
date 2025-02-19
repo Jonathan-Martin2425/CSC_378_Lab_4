@@ -26,6 +26,7 @@ public class SpaghettiShooting : MonoBehaviour
     private List<Tuple<Vector3, Quaternion>> indicatedPositions;
     private int bulletsShot = 0;
     private Animator bossAnimator;
+    private int phase;
     //private String attackType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,9 +40,10 @@ public class SpaghettiShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        phase = bossAnimator.GetInteger("phase");
         if(attackTimer >= 0){
             attackTimer -= Time.deltaTime;
-        }else{
+        }else if(phase == 1){
             if(attackType == "Spaghetti"){
                 Shoot(sauceBullet);
                 bulletsShot++;
@@ -79,6 +81,18 @@ public class SpaghettiShooting : MonoBehaviour
                 bossAnimator.SetBool("isStretching", false);
                 rb.linearVelocityX = bossSpeed;
                 attackType = "Spaghetti";   
+            }
+        }else if(phase == 2){
+            if(attackType == "Meatball"){
+                Shoot(meatball);
+                bulletsShot++;
+                if(bulletsShot >= numMeatballBullets){
+                    attackType = "Lazer1";
+                    bulletsShot = 0;
+                }
+                attackTimer = MeatballBulletDelay;
+            }else{
+                attackType = "Meatball";
             }
         }
     }

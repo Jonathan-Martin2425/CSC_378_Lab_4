@@ -16,7 +16,6 @@ public class BossMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D obj)
     {
-        Debug.Log(obj.gameObject.tag);
         if(rb.linearVelocityX < 0){
             rb.linearVelocityX = -bossSpeed;
         }else{
@@ -26,8 +25,6 @@ public class BossMovement : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D obj)
     {
-        
-        Debug.Log(obj.gameObject.tag);
         if(rb.linearVelocityX < 0){
             rb.linearVelocityX = -bossSpeed;
         }else{
