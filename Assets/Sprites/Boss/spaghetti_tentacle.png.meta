@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spaghetti_tentacle_0: -6570017883058137823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,7 @@ public class SpaghettiShooting : MonoBehaviour
     public GameObject meatball;
     public GameObject sauceBullet;
     public List<Transform> tentacleShootPoints;
+    public List<SpriteRenderer> tentaclesArms;
     public GameObject indicator;
     public GameObject lazer;
     public float indicatorTime = 2f;
@@ -24,6 +25,7 @@ public class SpaghettiShooting : MonoBehaviour
     private float bossSpeed;
     private List<Tuple<Vector3, Quaternion>> indicatedPositions;
     private int bulletsShot = 0;
+    private Animator bossAnimator;
     //private String attackType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,6 +33,7 @@ public class SpaghettiShooting : MonoBehaviour
     {
         bossSpeed = GetComponent<BossMovement>().bossSpeed;
         rb = GetComponent<Rigidbody2D>();
+        bossAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,12 +67,16 @@ public class SpaghettiShooting : MonoBehaviour
                 for(int i = 0; i < 2; i++){
                     Instantiate(lazer, indicatedPositions[i].Item1, indicatedPositions[i].Item2);
                 }
-                /*foreach(GameObject arm in tentaclesArms){
-                    arm.GetComponent<SpriteRenderer>().forceRenderingOff = true;
-                }*/
+                foreach(SpriteRenderer arm in tentaclesArms){
+                    arm.forceRenderingOff = true;
+                }
                 attackTimer = indicatorTime;
                 attackType = "Lazer3";
             }else if(attackType == "Lazer3"){
+                foreach(SpriteRenderer arm in tentaclesArms){
+                    arm.forceRenderingOff = false;
+                }
+                bossAnimator.SetBool("isStretching", false);
                 rb.linearVelocityX = bossSpeed;
                 attackType = "Spaghetti";   
             }
@@ -97,6 +104,7 @@ public class SpaghettiShooting : MonoBehaviour
         }
         attackTimer = indicatorTime;
         attackType = "Lazer2";
+        bossAnimator.SetBool("isStretching", true);
         return res;
     }
 }
