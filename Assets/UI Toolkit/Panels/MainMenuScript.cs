@@ -19,7 +19,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartClicked(ClickEvent evt)
     {
-        SceneManager.LoadScene("Boss-fight");
+        SceneManager.LoadScene("Cutscene");
     }
 
     public void CreditsClicked(ClickEvent evt)
