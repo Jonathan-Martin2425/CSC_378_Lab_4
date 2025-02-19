@@ -26,6 +26,7 @@ public class PlayerShooting : MonoBehaviour
         if (isShooting && Time.time >= nextFireTime)
         {
             Shoot();
+            GetComponent<AudioSource>().Play();
             nextFireTime = Time.time + fireRate;
         }
     }
@@ -48,6 +49,10 @@ public class PlayerShooting : MonoBehaviour
     {
         // When space bar is pressed, isShooting will be set to the opposite of its current value
         isShooting = !isShooting;
+        if (!isShooting)
+        {
+            GetComponent<AudioSource>().Stop();
+        }
         playerAnimator.SetBool("isShooting", isShooting);
     }
 }
