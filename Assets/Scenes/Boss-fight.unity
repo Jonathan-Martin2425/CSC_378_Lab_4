@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6324345233592479916, guid: e7ddd691379a89e4bae2385a7646e9c1, type: 3}
+      propertyPath: hat
+      value: 
+      objectReference: {fileID: 893152684}
+    - target: {fileID: 6324345233592479916, guid: e7ddd691379a89e4bae2385a7646e9c1, type: 3}
+      propertyPath: sprs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8406610783533277094, guid: e7ddd691379a89e4bae2385a7646e9c1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -266,6 +274,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 25, y: 3}
   m_EdgeRadius: 0
+--- !u!212 &893152684 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5605243388916085542, guid: e7ddd691379a89e4bae2385a7646e9c1, type: 3}
+  m_PrefabInstance: {fileID: 220986589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897324743
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,8 +370,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1613926186}
     - target: {fileID: 810149597044237370, guid: b812e1c99ba1151458b0bd18403e384f, type: 3}
+      propertyPath: maxHealth
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 810149597044237370, guid: b812e1c99ba1151458b0bd18403e384f, type: 3}
       propertyPath: phase2Threshhold
-      value: 666.6667
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3751246516468698013, guid: b812e1c99ba1151458b0bd18403e384f, type: 3}
       propertyPath: pulseLimit
@@ -378,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 8648118979454161988, guid: 77cc9c67f76ed7d42a6010adcaff5936, type: 3}
     - target: {fileID: 3751246516468698013, guid: b812e1c99ba1151458b0bd18403e384f, type: 3}
       propertyPath: numBounceBullets
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4629963750808105967, guid: b812e1c99ba1151458b0bd18403e384f, type: 3}
       propertyPath: m_LocalPosition.x

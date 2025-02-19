@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private float curIframes = 0;
     public List<SpriteRenderer> sprs;
     public float blinkingSpeed = 0.25f;
+    public SpriteRenderer hat;
 
     void Start()
     {
@@ -24,10 +26,12 @@ public class PlayerHealth : MonoBehaviour
             foreach(SpriteRenderer spr in sprs){
                 spr.forceRenderingOff = (curIframes / blinkingSpeed % 2) >= 1;
             }
+            hat.forceRenderingOff = (curIframes / blinkingSpeed % 2) >= 1;
         }else{
             foreach(SpriteRenderer spr in sprs){
                 spr.forceRenderingOff = false;
             }
+            hat.forceRenderingOff = false;
         }
     }
 
@@ -38,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
             if(lives <= 0){
                 Destroy(gameObject);
                 SceneManager.LoadScene("LoseScreen");
+            }else if(lives <= 1){
+                hat.enabled = false;
             }
         }
     }
