@@ -5,24 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class BossHitbox : MonoBehaviour
 {
-    public float health = 100f;
+    public float maxHealth = 2000f;
+    public float curHealth = 2000f;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.1f;
     private bool isFlashing;
+    [SerializeField] HealthBar healthBar;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthBar = GetComponentInChildren<HealthBar>();
+        healthBar.UpdateHealthBar(maxHealth, curHealth);
     }
 
     public void takeDamage(float damage)
     {
-        health -= damage;
+        curHealth -= damage;
+        healthBar.UpdateHealthBar(maxHealth, curHealth);
         if (!isFlashing)
         {
             StartCoroutine(onDamage());
         }
-        if (health <= 0){
+        if (curHealth <= 0){
             Destroy(gameObject);
             SceneManager.LoadScene("WinScreen");
         }
