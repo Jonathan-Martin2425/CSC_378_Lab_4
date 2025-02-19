@@ -1,30 +1,54 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BossHitbox : MonoBehaviour
 {
-    public float health = 100f;
+    public float phase2Threshhold = 1500f;
+    public float phase2PositionOffset = 0.5f;
+    public List<GameObject> nonPhase2Objs;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.1f;
     private bool isFlashing;
+    private Animator bossAnimator;
+    public float maxHealth = 2000f;
+    public float curHealth;
+    [SerializeField] HealthBar healthBar;
 
     void Start()
     {
+        curHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        bossAnimator = GetComponent<Animator>();
+        healthBar = GetComponentInChildren<HealthBar>();
+        healthBar.UpdateHealthBar(maxHealth, curHealth);
     }
 
     public void takeDamage(float damage)
     {
-        health -= damage;
+        curHealth -= damage;
+        healthBar.UpdateHealthBar(maxHealth, curHealth);
         if (!isFlashing)
         {
             StartCoroutine(onDamage());
         }
-        if (health <= 0){
+        if (curHealth <= 0){
             Destroy(gameObject);
             SceneManager.LoadScene("WinScreen");
+        }else if (curHealth <= phase2Threshhold && 
+        -phase2PositionOffset < gameObject.transform.position.x
+         && gameObject.transform.position.x < phase2PositionOffset){
+            bossAnimator.SetInteger("phase", 2);
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = true;
+            foreach(GameObject obj in nonPhase2Objs){
+                obj.SetActive(false);
+            }
         }
     }
 
