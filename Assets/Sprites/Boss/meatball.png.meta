@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 01a7eef3b46338c46a4ba61eb586e632
+guid: 0c5dcdab237f078469eea631ce70e11c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4179183935955756627
-    second: frying_pan_0
+      213: -886717763284981261
+    second: meatball_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frying_pan_0
+      name: meatball_0
       rect:
         serializedVersion: 2
-        x: 207
-        y: 0
-        width: 251
-        height: 375
+        x: 17
+        y: 14
+        width: 246
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da9965e3a5e8006c0800000000000000
-      internalID: -4179183935955756627
+      spriteID: 3f9ae5f64eeb1b3f0800000000000000
+      internalID: -886717763284981261
       vertices: []
       indices: 
       edges: []

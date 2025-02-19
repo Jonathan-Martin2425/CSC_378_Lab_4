@@ -47,8 +47,11 @@ TagManager:
   - name: Background
     uniqueID: 3759108611
     locked: 0
-  - name: Bottom
+  - name: Boss1
     uniqueID: 1627541027
+    locked: 0
+  - name: Boss2
+    uniqueID: 3343580757
     locked: 0
   - name: Middle
     uniqueID: 4068523283
