@@ -984,7 +984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85ba8527e6b69948b480d583c8f19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3000
   phase2Threshhold: 1500
   phase2PositionOffset: 0.5
   nonPhase2Objs:
@@ -992,6 +991,9 @@ MonoBehaviour:
   - {fileID: 3757611085306566871}
   - {fileID: 1034113866297599673}
   flashDuration: 0.1
+  maxHealth: 2000
+  curHealth: 0
+  healthBar: {fileID: 0}
 --- !u!95 &33995359196348898
 Animator:
   serializedVersion: 7
