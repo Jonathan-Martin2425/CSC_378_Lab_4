@@ -36,7 +36,6 @@ public class BossHitbox : MonoBehaviour
             StartCoroutine(onDamage());
         }
         if (curHealth <= 0){
-        if (curHealth <= 0){
             Destroy(gameObject);
             SceneManager.LoadScene("WinScreen");
         }else if (curHealth <= phase2Threshhold && 
