@@ -99,7 +99,6 @@ public class BossAttackPattern : MonoBehaviour
                     bulletsShot = 0;
                 }
                 attackTimer = MeatballBulletDelay;
-                attackTimer = MeatballBulletDelay;
             }else if (attackType == "MeatBounce")
             {
                 float force = (float)UnityEngine.Random.Range(-5, -7.5f);
