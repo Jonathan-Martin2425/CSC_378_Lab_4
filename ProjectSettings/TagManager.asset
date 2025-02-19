@@ -53,6 +53,9 @@ TagManager:
   - name: Boss2
     uniqueID: 3343580757
     locked: 0
+  - name: Boss3
+    uniqueID: 2882232377
+    locked: 0
   - name: Middle
     uniqueID: 4068523283
     locked: 0

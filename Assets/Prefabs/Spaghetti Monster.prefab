@@ -946,6 +946,8 @@ MonoBehaviour:
   - {fileID: 3500584446124196840}
   meatball: {fileID: 5726933384275588674, guid: 1ab23e3664339764581785780168eba1, type: 3}
   sauceBullet: {fileID: 4258756917785636543, guid: 0f4a1acb517e44e8a988478acc638224, type: 3}
+  bouncingMeatball: {fileID: 8648118979454161988, guid: 77cc9c67f76ed7d42a6010adcaff5936, type: 3}
+  spinMeatball: {fileID: 8626102815618049725, guid: 778278137a5222c4ca58690da55edc86, type: 3}
   tentacleShootPoints:
   - {fileID: 270332415965466533}
   - {fileID: 3815462114490554255}
@@ -955,10 +957,17 @@ MonoBehaviour:
   indicator: {fileID: 125379400558316627, guid: 135c3d265b57bfa488a64cd6ba9c719c, type: 3}
   lazer: {fileID: 7486171546497656628, guid: 842514fea372f9a4dbb76905128908a9, type: 3}
   indicatorTime: 1
+  bulletsOffset: 0.5
   SauceBulletDelay: 0.4
   MeatballBulletDelay: 2
+  BounceBulletDelay: 3
+  pulseDelay: 0.5
   numSauceBullets: 10
   numMeatballBullets: 3
+  numBounceBullets: 5
+  pulseLimit: 10
+  pulseAmmount: 15
+  bulletsShot: 0
 --- !u!114 &5303213908904803931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,14 +993,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85ba8527e6b69948b480d583c8f19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3000
-  phase2Threshhold: 1500
+  phase2Threshhold: 666.6667
   phase2PositionOffset: 1
   nonPhase2Objs:
   - {fileID: 793348263680939802}
   - {fileID: 3757611085306566871}
   - {fileID: 1034113866297599673}
   flashDuration: 0.1
+  maxHealth: 2000
+  curHealth: 0
+  healthBar: {fileID: 0}
 --- !u!95 &33995359196348898
 Animator:
   serializedVersion: 7
