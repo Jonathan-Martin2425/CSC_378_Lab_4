@@ -554,8 +554,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -951386539
-  m_SortingLayer: 3
+  m_SortingLayerID: -1412734919
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 222895082240017086, guid: 822d7d02da3b5fc4bb5704fd0f74af37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -739,8 +739,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -951386539
-  m_SortingLayer: 3
+  m_SortingLayerID: -1412734919
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 222895082240017086, guid: 822d7d02da3b5fc4bb5704fd0f74af37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -954,6 +954,10 @@ MonoBehaviour:
   tentaclesArms:
   - {fileID: 5534092236188891305}
   - {fileID: 8352548675098883940}
+  audioSources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   indicator: {fileID: 125379400558316627, guid: 135c3d265b57bfa488a64cd6ba9c719c, type: 3}
   lazer: {fileID: 7486171546497656628, guid: 842514fea372f9a4dbb76905128908a9, type: 3}
   indicatorTime: 1
@@ -964,7 +968,7 @@ MonoBehaviour:
   pulseDelay: 0.5
   numSauceBullets: 10
   numMeatballBullets: 3
-  numBounceBullets: 5
+  numBounceBullets: 3
   pulseLimit: 10
   pulseAmmount: 15
   bulletsShot: 0
@@ -993,14 +997,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85ba8527e6b69948b480d583c8f19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase2Threshhold: 666.6667
+  phase2Threshhold: 1000
   phase2PositionOffset: 1
   nonPhase2Objs:
   - {fileID: 793348263680939802}
   - {fileID: 3757611085306566871}
   - {fileID: 1034113866297599673}
   flashDuration: 0.1
-  maxHealth: 2000
+  maxHealth: 2500
   curHealth: 0
   healthBar: {fileID: 0}
 --- !u!95 &33995359196348898

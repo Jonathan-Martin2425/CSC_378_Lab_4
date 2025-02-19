@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public List<SpriteRenderer> sprs;
     public float blinkingSpeed = 0.25f;
     public SpriteRenderer hat;
+    public AudioSource ouch;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         if(curIframes <= 0){
             curIframes = iFrames;
             lives -= 1;
+            ouch.Play();
             if(lives <= 0){
                 Destroy(gameObject);
                 SceneManager.LoadScene("LoseScreen");

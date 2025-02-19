@@ -14,6 +14,7 @@ public class BossAttackPattern : MonoBehaviour
     public GameObject spinMeatball;
     public List<Transform> tentacleShootPoints;
     public List<SpriteRenderer> tentaclesArms;
+    public List<AudioSource> audioSources;
     public GameObject indicator;
     public GameObject lazer;
     public float indicatorTime = 2f;
@@ -80,6 +81,7 @@ public class BossAttackPattern : MonoBehaviour
                 foreach(SpriteRenderer arm in tentaclesArms){
                     arm.forceRenderingOff = true;
                 }
+                audioSources[1].Play();
                 attackTimer = indicatorTime;
                 attackType = "Lazer3";
             }else if(attackType == "Lazer3"){
@@ -121,6 +123,8 @@ public class BossAttackPattern : MonoBehaviour
                     attackType = "Meatball";
                     attackTimer = MeatballBulletDelay;
                     bossAnimator.SetBool("isSpinning", false);
+                }else if(bulletsShot <= 1){
+                    audioSources[2].Play();
                 }else{
                     attackTimer = pulseDelay;
                 }
@@ -152,6 +156,7 @@ public class BossAttackPattern : MonoBehaviour
         attackTimer = indicatorTime;
         attackType = "Lazer2";
         bossAnimator.SetBool("isStretching", true);
+        audioSources[0].Play();
         return res;
     }
 

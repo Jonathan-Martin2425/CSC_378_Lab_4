@@ -3,6 +3,7 @@ using UnityEngine;
 public class MeatP2TriggerHandler : MonoBehaviour
 {
     public int maxBounces = 3;
+    public AudioSource sound;
     private int numBounces = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +27,7 @@ public class MeatP2TriggerHandler : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D obj)
     {
+        sound.Play();
         if(obj.gameObject.tag == "Player"){
             obj.gameObject.GetComponent<PlayerHealth>().takeDamage();
             Destroy(gameObject);

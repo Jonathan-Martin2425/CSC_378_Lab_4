@@ -9,8 +9,10 @@ public class MeatballBehavior : MonoBehaviour
     private Rigidbody2D rb;
     public float bulletSpeed = 5;
     public float smallerBallOffset = 0.5f;
+    public AudioSource sound;
 
     public float fuseTime = 2f;
+    private GameObject obj;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,15 +33,17 @@ public class MeatballBehavior : MonoBehaviour
     {
         fuseTime -= Time.deltaTime;
         if (fuseTime <= 0){
+            sound.Play();
             float x;
             float y;
             for(float i = 0; i < 360; i += 45){
                 x = (float)Math.Cos(i * (Math.PI / 180)) * smallerBallOffset;
                 y = (float)Math.Sin(i * (Math.PI / 180)) * smallerBallOffset;
-                Instantiate(smallerBall, 
-            gameObject.transform.position + new Vector3(x, y, 0), 
-            Quaternion.Euler(new Vector3(0, 0, i)));
+                obj = Instantiate(smallerBall, 
+                gameObject.transform.position + new Vector3(x, y, 0), 
+                Quaternion.Euler(new Vector3(0, 0, i)));
             }
+            obj.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
     }
